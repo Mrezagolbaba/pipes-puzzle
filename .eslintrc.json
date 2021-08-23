@@ -1,0 +1,57 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": [
+            "tsconfig.json"
+        ]
+    },
+    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "ignorePatterns": ["*.d.ts"],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/no-empty-interface": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/camelcase": 0,
+        "@typescript-eslint/no-use-before-define": 0,
+        "@typescript-eslint/no-object-literal-type-assertion": 0,
+        "@typescript-eslint/ban-ts-comment": 1,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/no-namespace": 0,
+        "@typescript-eslint/no-unnecessary-condition": 0,
+
+        "react/jsx-no-target-blank": 0,
+        "react/react-in-jsx-scope": 0,
+        "react/no-direct-mutation-state": 0,
+        "no-inner-declarations": 0,
+        "block-scoped-var": [2],
+        "sort-imports": [0],
+        "no-use-before-define": 0,
+        "spaced-comment": 0,
+        "camelcase": 0,
+        "no-restricted-imports": [1],
+        "no-duplicate-imports": 2,
+        "no-undef": "off",
+
+        "react/no-unescaped-entities": 0,
+        "react/prop-types": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+}
