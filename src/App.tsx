@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef,useLayoutEffect, FC }from 'react';
+import {AppContext, AppContextType} from './components/AppContext';
+import { Provider } from "react-redux";
+import PuzzlePage from './containers/puzzle'
+import './App.scss';
+import { Puzzle } from './api/puzzle';
+import configureStore from './store';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const ctx = useRef<AppContextType>({
+        puzzleApi: new Puzzle(),
+    });
+
+    useLayoutEffect(() => {
+        // initialise api before all other effects
+        ctx.current.puzzleApi.init().then(r => console.log(r));
+        ctx.current.puzzleApi.setLevel(1).then(r => console.log(r));
+    }, []);
+
+    const store = configureStore(ctx.current);
+
+    return(
+        <AppContext.Provider value={ctx.current}>
+            <Provider store={store}>
+                <PuzzlePage/>
+            </Provider>
+      </AppContext.Provider>
+    )
 }
 
 export default App;
