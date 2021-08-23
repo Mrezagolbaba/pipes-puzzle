@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was a pipes puzzle that uses WebSocket for backend API
+Also, have 6 levels of the game which is more complex than before level.
+I used Reactjs and TypeScript.
 
 ## Available Scripts
 
