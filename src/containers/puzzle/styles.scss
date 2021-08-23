@@ -1,0 +1,43 @@
+.canvas {
+  margin: 2% auto;
+  display: block;
+  border: 2px solid black;
+  cursor: pointer;
+  //margin-bottom: 20px;
+}
+.header{
+  background: #282c34;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  label{
+    color: #fff;
+    font-size: 18px;
+  }
+  button{
+    width: 6rem;
+    height: 2rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    outline: none;
+    border-radius: 20px;
+    background: coral;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  select{
+    width: 6rem;
+    height: 2rem;
+    margin-left: 1rem;
+    outline: none;
+    border-radius: 20PX;
+    padding: 0.5rem;
+    background: coral;
+    color: white;
+  }
+}
+
